@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('{% static 'events/images/bg.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 40px; /* Decreased height of the navigation bar */
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px; /* Decreased padding for the navigation links */
+            text-decoration: none;
+            background-color: #333;
+            margin-right: 8px;
+            border-radius: 8px;
+            font-size: 16px; /* Decreased font size for the navigation links */
+        }
+
+        li a:hover {
+            background-color: #fff;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            border-bottom: none; /* Removed the border line below the header */
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .container {
+            font-size: 18px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .current-page {
+            font-weight: bold;
+        }
+    </style>
+
+    <title>{% block title %}Event Management System{% endblock %}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>EVENT MANAGEMENT SYSTEM</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'events/Homepage' %}">Home</a></li>
+            <li><a href="{% url 'events/login' %}">Login</a></li>
+            <li><a href="{% url 'events/ContactUs' %}">Contact Us</a></li>
+            <li><a href="{% url 'events/AboutUs' %}">About Company</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            <div class="event-item">
+                <h3>Event 1: Music Concert</h3>
+                <p>Date: October 25, 2023</p>
+                <p>Location: Concert Hall</p>
+                <p>Description: Join us for an electrifying music concert featuring top artists from around the world.</p>
+            </div>
+            <div class="event-item">
+                <h3>Event 2: Food Festival</h3>
+                <p>Date: November 5, 2023</p>
+                <p>Location: Central Park</p>
+                <p>Description: Indulge in a culinary extravaganza with a wide variety of delicious dishes.</p>
+            </div>
+            <div class="event-item">
+                <h3>Event 3: Tech Conference</h3>
+                <p>Date: November 15, 2023</p>
+                <p>Location: Tech Center</p>
+                <p>Description: Stay up to date with the latest technology trends and innovations.</p>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "events/base.html" %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .content-section {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #17a2b8;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Increased font size */
+        }
+
+        .form-group button:hover {
+            background-color: #138496;
+        }
+
+        .border-top {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .text-muted {
+            color: #777;
+            font-size: 14px; /* Increased font size */
+        }
+
+        .text-muted a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        .text-muted a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Need an account? <a class="ml-2" href="{% url 'events/register' %}">Sign Up Now</a>
+            </small>
+            <br>
+            <small class="text-muted">
+                Are you an ServiceProvider? <a class="ml-2" href="{% url 'events/serviceproviderlogin' %}">Click here</a>
+            </small>
+            <br>
+            <small>
+             Are you an admin? <a class="ml-2" href="{% url 'events/adminlogin' %}">Click here</a>
+            </small>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

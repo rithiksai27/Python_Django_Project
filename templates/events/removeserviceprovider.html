@@ -1,0 +1,17 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<head>
+    <title>Delete Service Provider</title>
+</head>
+<body>
+    <h1>Delete Service Provider</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete Service Provider</button>
+    </form>
+
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<head>
+    <title>Add Service Provider</title>
+</head>
+<body>
+    <h1>Add Service Provider</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Service Provider</button>
+    </form>
+
+</body>
+{% endblock %}

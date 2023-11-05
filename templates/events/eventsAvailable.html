@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('{% static 'events/images/bg1.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 16px;
+            color: #fff;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 40px;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            background-color: #333;
+            margin-right: 8px; /* Corrected this line */
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        li a:hover {
+            background-color: #fff;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        header {
+
+
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            border-bottom: none;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .container {
+            font-size: 18px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            background-color: pink; /* Change the background color to pink */
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .current-page {
+            font-weight: bold;
+        }
+
+        /* Add styles for event types */
+        .event-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .event-images {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .event-image {
+            width: 350px; /* Set a fixed width for all images */
+            margin-right: 10px;
+        }
+
+        .book-now-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            display: block;
+        }
+
+        .event-image-container {
+            padding: 30px; /* Adjust the padding value as needed */
+        }
+    </style>
+
+    <title>{% block title %}Event Management System{% endblock %}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+</head>
+
+<body>
+   <header style="background-color: pink;">
+    <h1>EVENT MANAGEMENT SYSTEM</h1>
+</header>
+
+    <main>
+        <h2 style="font-size: 80px; color: #C0C0C0; font-weight: bold;">Event Types</h2>
+        <div class="event-images">
+            <div class="event-type">
+                <span style="font-size: 45px; color: #FFA500; font-weight: bold; margin: 0 auto;">Marriage</span>
+                <div class="event-image-container">
+                    <img class="event-image" src="{% static 'events/images/marriage.jpg' %}" alt="Marriage Image" style="width: 400px; height: 350px;">
+                </div>
+                <a class="book-now-button" href="{% url 'events/booking' event_type='Marriage' %}">Book Now</a>
+            </div>
+
+            <div class="event-type">
+                <span style="font-size: 45px; color: #FFA500; font-weight: bold;margin: 0 auto;">Birthday</span>
+                <div class="event-image-container">
+                    <img class="event-image" src="{% static 'events/images/birthday.jpg' %}" alt="Birthday Image" style="width: 400px; height: 350px;">
+                </div>
+                <a class="book-now-button" href="{% url 'events/booking' event_type='Birthday' %}">Book Now</a>
+            </div>
+
+            <div class "event-type">
+                <span style="font-size: 45px; color: #FFA500; font-weight: bold;margin: 0 auto;">Corporate meet</span>
+                <div class="event-image-container">
+                    <img class="event-image" src="{% static 'events/images/corporate.jpg' %}" alt="Corporate" style="width: 400px; height: 350px;">
+                </div>
+                <a class="book-now-button" href="{% url 'events/booking' event_type='Corporate' %}">Book Now</a>
+            </div>
+
+            <div class="event-type">
+                <span style="font-size: 45px; color: #FFA500; font-weight: bold;margin: 0 auto;">Conference</span>
+                <div class="event-image-container">
+                    <img class="event-image" src="{% static 'events/images/conference.jpg' %}" alt="Conference Image" style="width: 400px; height: 350px;">
+                </div>
+                <a class="book-now-button" href="{% url 'events/booking' event_type='Conference' %}">Book Now</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

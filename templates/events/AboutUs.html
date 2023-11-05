@@ -1,0 +1,90 @@
+{% extends "events/base.html" %}
+{% load static %}
+
+{% block content %}
+    <style>
+      .founders-heading {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 120px; /* Increased margin-top to add more space */
+    color: #000000;
+}
+
+
+        .owners {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .owner {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+            color: #000000;
+        }
+
+        .owner img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .owner-info {
+            padding: 20px;
+        }
+
+        .owner h3 {
+            font-size: 24px;
+        }
+
+        .owner p {
+            font-size: 18px;
+        }
+
+        .full-width-text {
+            font-size: 24px;
+            color: black;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            overflow: auto; /* Add overflow to handle content that exceeds the viewport */
+        }
+    </style>
+
+    <p class="full-width-text">
+               At EventAura, we are passionate about creating unforgettable and seamless event experiences. With years of expertise in the event planning industry, we have become a trusted name in curating exceptional events for our clients. Our dedicated team works tirelessly to bring your visions to life, ensuring every detail is meticulously planned and executed. From corporate gatherings to weddings and special occasions, we pride ourselves on delivering events that leave lasting impressions and cherished memories. Let us take the stress out of event planning and turn your ideas into remarkable realities.
+    </p>
+    <br>
+
+<h1>      </h1>
+<h2>      </h2>
+<h2 class="founders-heading">Founders of the Company</h2>
+    <div class="owners">
+        <div class="owner">
+            <img src="{% static 'events/images/abhijith.jpg' %}" alt="Abhijith">
+            <div class="owner-info">
+                <h3>Abhijith - CEO</h3>
+                <p>Abhijith is a creative visionary with a passion for bringing unique event concepts to life. With his experience in event design and management, he ensures that every event is a memorable experience. He leads our team with unwavering dedication and innovation, striving to exceed expectations and deliver exceptional experiences.</p>
+            </div>
+        </div>
+
+        <div class="owner">
+            <img src="{% static 'events/images/vaishnavi.jpg' %}" alt="Vaishnavi">
+            <div class "owner-info">
+                <h3>Vaishnavi - Chairwoman</h3>
+                <p>Vaishnavi is our detail-oriented event planner who excels in coordinating logistics and ensuring that everything runs smoothly. She's dedicated to making your event stress-free and flawless. As Chairman, she oversees our strategic vision and ensures that every event reflects our commitment to excellence and client satisfaction.</p>
+            </div>
+        </div>
+
+        <div class="owner">
+            <img src="{% static 'events/images/rithik.jpg' %}" alt="Rithik">
+            <div class="owner-info">
+                <h3>Rithik - Managing Director</h3>
+                <p>Rithik is our tech-savvy production manager who takes care of all technical aspects of your event, from lighting to sound. He's committed to delivering top-notch audio-visual experiences. As our Managing Director, he orchestrates the seamless execution of our events, combining creativity and technology to leave a lasting impact on attendees.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

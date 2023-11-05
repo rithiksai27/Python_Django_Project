@@ -1,0 +1,147 @@
+{% extends "events/base.html" %}
+{% block content %}
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .content-section {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* Change the background color to white */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #17a2b8;
+            color: #ff6600; /* Change the font color to orange */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #fff;
+        }
+
+        .border-top {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .text-muted {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .text-muted a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .text-muted a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            background-color: #fff; /* Change the background color to white */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 10px;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form .form-group label {
+            margin-bottom: 10px;
+        }
+
+        .contact-form .form-group textarea {
+            height: 150px;
+            width: 100%;
+        }
+
+        .contact-form .form-group button {
+            align-self: flex-end;
+        }
+    </style>
+
+    <title>Contact Us - Event Management System</title>
+</head>
+
+<body>
+   <header style="background-color: orange;">
+    <h1 style="background-color: orange;">Contact Us</h1>
+    <p>We're here to help you with any questions or concerns you may have.</p>
+</header>
+
+
+    <section>
+        <h2>Contact Information</h2>
+
+        <div class="contact-box">
+            <h3 style="color:black">Email</h3>
+            <p style="color:black"><a href="mailto:Klu@eventmanagementsystem.com">Klu@eventmanagementsystem.com</a></p>
+        </div>
+
+        <div class="contact-box">
+            <h3 style="color:black">Phone</h3>
+            <p style="color:black">+91973893738</p>
+        </div>
+
+        <div class="contact-box">
+            <h3 style="color:black">Address</h3>
+            <p style="color:black">Guntur<br>City, Andhra Pradesh<br>India</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact Form</h2>
+        <p>You can also reach out to us by filling out the contact form below. We will respond to your inquiry as soon as possible.</p>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name "email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+
+{% endblock %}

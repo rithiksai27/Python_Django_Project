@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <header>
+        <h1>EVENT MANAGEMENT SYSTEM</h1>
+    </header>
+
+    <style>
+        body {
+              background: url('{% static 'events/images/bg.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .custom-navbar {
+            background-color: #333;
+            height: 40px;
+        }
+
+        .custom-navbar a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin-right: 8px;
+            border-radius: 8px;
+        }
+
+        .custom-navbar a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .custom-navbar .active {
+            background-color: #4CAF50;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .container {
+            font-size: 18px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .current-page {
+            font-weight: bold;
+        }
+    </style>
+
+    <h3>Sign Up</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Register</button>
+        <a href="{% url 'events/login' %}">Already Have an Account? Sign In Here</a>
+    </form>
+</head>
+<body>
+    <!-- Your HTML content goes here -->
+</body>
+</html>

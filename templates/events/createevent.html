@@ -1,0 +1,23 @@
+{% extends "events/base.html" %}
+
+{% block title %}Create New Event - Event Management System{% endblock %}
+
+{% block content %}
+    <h1>Create an Event</h1>
+    <form action="{% url 'events/createevent' %}" method="post">
+        {% csrf_token %} <!-- Include the CSRF token -->
+        <label for="eventName" style="font-size: 18px; color: white; font-weight: bold;">Event Name:</label>
+        <input type="text" id="eventName" name="eventName" required><br><br>
+
+        <label for="eventDate" style="font-size: 18px; color: white; font-weight: bold;">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" required><br><br>
+
+        <label for="eventTime" style="font-size: 18px; color: white; font-weight: bold;">Event Time:</label>
+        <input type="time" id="eventTime" name="eventTime" required><br><br>
+
+        <label for="eventDescription" style="font-size: 18px; color: white; font-weight: bold;">Event Description:</label><br>
+        <textarea id="eventDescription" name="eventDescription" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Create Event">
+    </form>
+{% endblock %}

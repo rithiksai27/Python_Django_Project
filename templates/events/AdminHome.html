@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('{% static 'events/images/event sdp.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 40px; /* Decreased height of the navigation bar */
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px; /* Decreased padding for the navigation links */
+            text-decoration: none;
+            background-color: #333;
+            margin-right: 8px;
+            border-radius: 8px;
+            font-size: 16px; /* Decreased font size for the navigation links */
+        }
+
+        li a:hover {
+            background-color: #fff;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            border-bottom: none; /* Removed the border line below the header */
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .container {
+            font-size: 18px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .current-page {
+            font-weight: bold;
+        }
+    </style>
+
+    <title>{% block title %}Event Management System{% endblock %}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'events/css/bootstrap.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>EVENT MANAGEMENT SYSTEM</h1>
+    </header>
+
+    <nav>
+        <ul>
+
+            <li><a href="{% url 'events/addserviceprovider' %}">addserviceprovider</a></li>
+           <li><a href="{% url 'events/removeserviceprovider' %}">removeserviceprovider</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <h2>Welcome to Your Admin Home Page</h2>
+     <p>This page is Admin Home.{% endblock %
+    </div>
+</body>
+</html>

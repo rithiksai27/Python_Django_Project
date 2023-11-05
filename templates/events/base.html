@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: url('{% static 'events/images/bg.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .custom-navbar {
+            background-color: #ff00ff; /* Pink background color */
+            height: 40px;
+        }
+
+        .custom-navbar a {
+            display: inline-block;
+            color: #FFC0CB;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin-right: 8px;
+            border-radius: 8px;
+        }
+
+        .custom-navbar a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .custom-navbar .active {
+            background-color: #4CAF50;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff00ff; /* Pink background color */
+        }
+
+        header h1 {
+            font-size: 36px;
+            color: #FFC0CB;
+        }
+
+        .container {
+            font-size: 18px;
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .event-item {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .current-page {
+            font-weight: bold;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>{% block title %}Event Management System{% endblock %}</title>
+</head>
+<body>
+
+    <header style="color:#FFC0CB">
+        <h1>EVENT MANAGEMENT SYSTEM</h1>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

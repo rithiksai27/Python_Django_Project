@@ -1,0 +1,53 @@
+{% extends "events/base.html" %}
+{% load static %}
+{% block title %}Book Event{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 style="font-size: 45px; font-weight: bold; color: #808080;">Book Your Event</h2>
+    <p style="font-size: 45px; color: #808080;">Select the event type and provide your information to book your event.</p>
+
+    <form method="post" action="{% url 'events/payment' %}" id="booking-form">
+        {% csrf_token %}
+        <label style="font-size: 25px; color: white;" for="{{ form.name.id }}">Name:</label>
+        {{ form.name }}
+        <br>
+
+        <label style="font-size: 25px; color: white;" for="{{ form.email.id }}">Email:</label>
+        {{ form.email }}
+        <br>
+
+        <label style="font-size: 25px; color: white;" for="{{ form.event_type.id }}">Event Type:</label>
+        {{ form.event_type }}
+        <br>
+        <br>
+
+        <label style="font-size: 25px; color: white;" for="venue">Select Venue:</label>
+        <select name="venue" id="venue">
+            <option value="vjy">-------</option>
+            <option value="gnt">Guntur</option>
+        </select>
+        <br>
+
+        <label style="font-size: 25px; color: white;" for="cuisine">Select Cuisine:</label>
+        <select name="cuisine" id="cuisine">
+            <option value="veg">------</option>
+            <option value="veg">Veg</option>
+            <option value="nonveg">Non-Veg</option>
+        </select>
+        <br>
+
+        <label style="font-size: 25px; color: white;" for="payment">Payment Details:</label>
+        <select name="payment" id="payment">
+            <option value="500000">-------</option>
+            <option value="500000">Marriage - 5 Lakhs</option>
+            <option value="80000">Birthday - 80,000</option>
+            <option value="150000">Conference - 1.5 Lakhs</option>
+            <option value="150000">Corporate Event - 1.5 Lakhs</option>
+        </select>
+        <br>
+
+        <input type="submit" value="Book Now">
+    </form>
+</div>
+{% endblock %}

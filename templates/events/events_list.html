@@ -1,0 +1,33 @@
+{% extends 'events/base.html' %}
+{% block content %}
+    <h1>Events List</h1>
+
+    <div class="event-list">
+        {% for Events in page %}
+            <div class="event-item">
+                <strong>Name:</strong> {{ Events.name }}<br>
+                <strong>Date:</strong> {{ Events.date }}<br>
+                <strong>Time:</strong> {{ Events.time }}<br>
+                <strong>Description:</strong> {{ Events.description }}<br>
+            </div>
+        {% empty %}
+            <div class="event-item">No Events found.</div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page.has_previous %}
+                <a href="?page=1" class="pagination-link" style="color: #fff;">&laquo; first</a>
+                <a href="?page={{ page.previous_page_number }}" class="pagination-link" style="color: #fff;">previous</a>
+            {% endif %}
+
+            <span class="current-page" style="color: #fff;">{{ page.number }} of {{ page.paginator.num_pages }}</span>
+
+            {% if page.has_next %}
+                <a href="?page={{ page.next_page_number }}" class="pagination-link" style="color: #fff;">next</a>
+                <a href="?page={{ page.paginator.num_pages }}" class="pagination-link" style="color: #fff;">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}
