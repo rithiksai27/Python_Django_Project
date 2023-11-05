@@ -1,0 +1,6 @@
+body {
+    background-image: url('./static/events/events/images/img.jpg');
+    background-size: cover; /* This ensures the image covers the whole element */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-attachment: fixed; /* This makes the background fixed while scrolling */
+}
